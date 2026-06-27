@@ -1,0 +1,145 @@
+.menu-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  border-top: 1px solid;
+}
+
+.menu__item:first-child {
+  border-top: none;
+}
+
+.menu__item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 3vh;
+  padding: 0 10px;
+}
+
+.menu__item-link:hover {
+  color: inherit;
+}
+
+.menu__item-link:focus:not(:focus-visible) {
+  color: inherit;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  transform: translate3d(0, 101%, 0);
+}
+
+.marquee__inner-wrap {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: fit-content;
+  will-change: transform;
+}
+
+.marquee__part {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee span {
+  white-space: nowrap;
+  text-transform: capitalize;
+  font-weight: 400;
+  font-size: 3vh;
+  line-height: 1;
+  padding: 0 1vw;
+}
+
+.marquee__img {
+  width: 160px;
+  height: 5vh;
+  margin: 1.5em 2vw;
+  padding: 0.8em 0;
+  border-radius: 40px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.marquee__item-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 2vw;
+}
+
+.marquee__img-small {
+  width: 80px;
+  height: 80px;
+  margin: 0.5em 1vw;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.marquee__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin: 0 2.5vw;
+  color: #ffffff;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+              filter 0.35s ease;
+  transform-origin: center center;
+}
+
+/* Force all content inside marquee icons to same size */
+.marquee__icon svg,
+.marquee__icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+/* Force all images white (for colored PNG/SVG assets) */
+.marquee__icon img {
+  filter: brightness(0) invert(1);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Single icon hover — independent scale + glow */
+.marquee__icon:hover {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.6));
+}

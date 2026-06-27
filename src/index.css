@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  background-color: #FFFFFF;
+  font-family: 'Kanit', sans-serif;
+}
+
+.hero-heading {
+  font-family: 'Sora', sans-serif;
+  color: #ffffff !important;
+  text-shadow: 0 2px 20px rgba(124, 58, 237, 0.4);
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0.8;
+  }
+}
+
+.animate-shine {
+  animation: shine 2s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.9) 50%, transparent 100%);
+  width: 50%;
+  left: -50%;
+}
+
+@keyframes shine-full {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(50%);
+  }
+  82% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+}
+
+.animate-shine-full {
+  animation: shine-full 7s ease-in-out infinite;
+}
+
+/* Timeline dots — progressive glow, stay lit, unified fade, loop */
+/* Shared 7s cycle, NO animation-delay needed — each keyframe encodes its own timing */
+@keyframes dot-glow-0 {
+  0%, 2%    { background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+  5%       { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  6%, 74%  { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  77%      { background-color: #9b6fde; border-color: #d8ccfc; box-shadow: 0 0 10px rgba(124,58,237,0.4); }
+  80%      { background-color: #b89ed4; border-color: #e4daf8; box-shadow: 0 0 8px rgba(124,58,237,0.3); }
+  83%      { background-color: #d4c8ca; border-color: #efe8ec; box-shadow: 0 0 5px rgba(124,58,237,0.15); }
+  86%      { background-color: #e2dbdc; border-color: #f5f1f3; box-shadow: 0 0 2px rgba(124,58,237,0.06); }
+  90%, 100%{ background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+}
+@keyframes dot-glow-1 {
+  0%, 16%   { background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+  19%      { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  20%, 74% { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  77%      { background-color: #9b6fde; border-color: #d8ccfc; box-shadow: 0 0 10px rgba(124,58,237,0.4); }
+  80%      { background-color: #b89ed4; border-color: #e4daf8; box-shadow: 0 0 8px rgba(124,58,237,0.3); }
+  83%      { background-color: #d4c8ca; border-color: #efe8ec; box-shadow: 0 0 5px rgba(124,58,237,0.15); }
+  86%      { background-color: #e2dbdc; border-color: #f5f1f3; box-shadow: 0 0 2px rgba(124,58,237,0.06); }
+  90%, 100%{ background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+}
+@keyframes dot-glow-2 {
+  0%, 30%   { background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+  33%      { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  34%, 74% { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  77%      { background-color: #9b6fde; border-color: #d8ccfc; box-shadow: 0 0 10px rgba(124,58,237,0.4); }
+  80%      { background-color: #b89ed4; border-color: #e4daf8; box-shadow: 0 0 8px rgba(124,58,237,0.3); }
+  83%      { background-color: #d4c8ca; border-color: #efe8ec; box-shadow: 0 0 5px rgba(124,58,237,0.15); }
+  86%      { background-color: #e2dbdc; border-color: #f5f1f3; box-shadow: 0 0 2px rgba(124,58,237,0.06); }
+  90%, 100%{ background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+}
+@keyframes dot-glow-3 {
+  0%, 44%   { background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+  47%      { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  48%, 74% { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  77%      { background-color: #9b6fde; border-color: #d8ccfc; box-shadow: 0 0 10px rgba(124,58,237,0.4); }
+  80%      { background-color: #b89ed4; border-color: #e4daf8; box-shadow: 0 0 8px rgba(124,58,237,0.3); }
+  83%      { background-color: #d4c8ca; border-color: #efe8ec; box-shadow: 0 0 5px rgba(124,58,237,0.15); }
+  86%      { background-color: #e2dbdc; border-color: #f5f1f3; box-shadow: 0 0 2px rgba(124,58,237,0.06); }
+  90%, 100%{ background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+}
+@keyframes dot-glow-4 {
+  0%, 58%   { background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+  61%      { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  62%, 74% { background-color: #7C3AED; border-color: #c4b5fd; box-shadow: 0 0 12px rgba(124,58,237,0.5); }
+  77%      { background-color: #9b6fde; border-color: #d8ccfc; box-shadow: 0 0 10px rgba(124,58,237,0.4); }
+  80%      { background-color: #b89ed4; border-color: #e4daf8; box-shadow: 0 0 8px rgba(124,58,237,0.3); }
+  83%      { background-color: #d4c8ca; border-color: #efe8ec; box-shadow: 0 0 5px rgba(124,58,237,0.15); }
+  86%      { background-color: #e2dbdc; border-color: #f5f1f3; box-shadow: 0 0 2px rgba(124,58,237,0.06); }
+  90%, 100%{ background-color: #e5e7eb; border-color: #fff; box-shadow: 0 0 0 rgba(124,58,237,0); }
+}
+
+/* Spline Loader Animation */
+.loader {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e5e7eb;
+  border-bottom-color: #7C3AED;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Spotlight animation */
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
+}
+
+.animate-spotlight {
+  animation: spotlight 4s ease-out forwards;
+}
+
+/* ─── BreakableCard Animations ─── */
+@keyframes hover-wiggle {
+  0%,
+  100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes debris-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+/* Breathing animation for Drag hint */
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* Hide scrollbar for cover-flow cards */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
